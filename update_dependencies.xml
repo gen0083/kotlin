@@ -4,8 +4,8 @@
     <import file="node_utils.xml" optional="false"/>
 
     <property name="automerge_dummy" value="This property is used to trick git merge. Do not delete empty lines around."/>
-    <property name="ideaVersion" value="173.3415.22"/>
-    <property name="idea.repository.type" value="releases"/> <!-- releases or snapshots -->
+    <property name="ideaVersion" value="181-SNAPSHOT"/>
+    <property name="idea.repository.type" value="snapshots"/> <!-- releases or snapshots -->
     <property name="idea.kotlin.branch" value="rc"/>
 
 
@@ -205,7 +205,7 @@
         <untar src="${dependencies}/download/${android-sources.tgz}" dest="${dependencies}/dx-src" compression="gzip"/>
 
         <mkdir dir="${dependencies}/jflex"/>
-        <get src="https://raw.github.com/JetBrains/intellij-community/726738ae1ff4d4dbde1a56d06655aace9b74fe5e~1/tools/lexer/jflex-1.7.0-SNAPSHOT.jar"
+        <get src="https://jetbrains.bintray.com/intellij-third-party-dependencies/org/jetbrains/intellij/deps/jflex/jflex/1.7.0/jflex-1.7.0.jar"
              dest="${dependencies}/jflex/JFlex.jar" usetimestamp="true"/>
         <get src="https://raw.github.com/JetBrains/intellij-community/master/tools/lexer/idea-flex.skeleton"
              dest="${dependencies}/jflex/idea-flex.skeleton" usetimestamp="true"/>
