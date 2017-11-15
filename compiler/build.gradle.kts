@@ -60,7 +60,7 @@ dependencies {
 
     testRuntime(projectDist(":kotlin-compiler"))
     testRuntime(projectDist(":kotlin-daemon-client"))
-    testRuntime(preloadedDeps("dx", subdir = "android-5.0/lib"))
+    testRuntime(project(":custom-dependencies:android-dex-lib", configuration = "default"))
     testRuntime(files(toolsJar()))
 
     testJvm6ServerRuntime(projectTests(":compiler:tests-common-jvm6"))
@@ -83,6 +83,12 @@ sourceSets {
         projectDefault()
         // not yet ready
 //        java.srcDir("tests-ir-jvm/tests")
+    }
+}
+
+task("printTestRuntimeClasspath") {
+    doFirst{
+        println("!!! \n   ${the<JavaPluginConvention>().sourceSets["test"].runtimeClasspath.files.joinToString("\n   ")}")
     }
 }
 

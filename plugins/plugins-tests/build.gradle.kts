@@ -32,7 +32,7 @@ dependencies {
     testCompile(commonDep("junit:junit"))
     testRuntime(project(":jps-plugin"))
     testRuntime(projectTests(":compiler:tests-common-jvm6"))
-    testRuntime(preloadedDeps("dx", subdir = "android-5.0/lib"))
+    testRuntime(project(":custom-dependencies:android-dex-lib", configuration = "default"))
     robolectricClasspath(commonDep("org.robolectric", "robolectric"))
 }
 

@@ -17,7 +17,7 @@ dependencies {
     compile(project(":idea:ide-common"))
     compile(project(":idea:idea-gradle"))
 
-    compile(preloadedDeps("dx", subdir = "android-5.0/lib"))
+    compile(project(":custom-dependencies:android-dex-lib", configuration = "default"))
 
     testCompile(projectDist(":kotlin-test:kotlin-test-jvm"))
     testCompile(project(":idea:idea-test-framework")) { isTransitive = false }
